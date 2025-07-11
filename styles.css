@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+input {
+  font-family: "Quicksand", sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+}
+
+#submit-btn,
+#metric-system {
+  font-family: "Quicksand", sans-serif;
+  background-color: #0d5ea6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#submit-btn {
+  height: 25px;
+  width: 60px;
+  margin-left: 10px;
+}
+
+#metric-system {
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+}
+
+#submit-btn:hover,
+#metric-system:hover {
+  background-color: #254d70;
+  transform: scale(1.07);
+}
+
+.weatherInfoToday {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  align-items: center;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+#temperature-display {
+  font-size: 100px;
+}
+
+#location-text {
+  font-size: 35px;
+}
+
+.rightSide p {
+  margin: 20px 0;
+  padding-left: 40px;
+  text-align: right;
+}
+
+.weekForecast {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.weekForecast img {
+  width: 25px;
+  margin: 12px;
+}
+
+@media (max-width: 900px) {
+  #location-text {
+    font-size: 25px;
+  }
+
+  .weatherInfoToday,
+  .weekForecast {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  #temperature-display {
+    font-size: 70px;
+  }
+
+  #location-text {
+    font-size: 25px;
+  }
+
+  .weatherInfoToday {
+    flex-direction: column;
+    font-size: 14px;
+  }
+
+  .weekForecast {
+    font-size: 14px;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .weekForecast img {
+    width: 20px;
+  }
+
+  #metric-system {
+    top: 90%;
+    right: 30px;
+  }
+}
