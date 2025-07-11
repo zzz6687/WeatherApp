@@ -16,7 +16,7 @@ window.onload = async function () {
     lastWeatherData = weatherToday;
     renderWeather(weatherToday);
     renderWeatherWeek(weatherWeek);
-    iconSwitch(weatherToday);
+    backgroundSwitch(weatherToday);
   }
 };
 
@@ -32,7 +32,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   renderWeather(weatherToday);
   renderWeatherWeek(weatherWeek);
 
-  iconSwitch(weatherToday);
+  backgroundSwitch(weatherToday);
 });
 
 metricBtn.addEventListener("click", () => {
@@ -221,7 +221,10 @@ function renderWeatherWeek(weather) {
     dayElement.appendChild(dayText);
 
     const icon = document.createElement("img");
-    icon.src = getWeatherIcon(day.conditions);
+    const iconData = getWeatherIcon(day.conditions);
+
+    icon.src = iconData.src;
+    icon.alt = iconData.alt;
     dayElement.appendChild(icon);
 
     const tempText = document.createElement("p");
@@ -236,20 +239,20 @@ function getWeatherIcon(conditions) {
   switch (conditions) {
     case "Overcast":
     case "Partially cloudy":
-      return { path: "/icons/clouds.png", alt: "Cloudy" };
+      return { src: "/icons/clouds.png", alt: "Cloudy" };
     case "Clear":
-      return { path: "/icons/sun.png", alt: "Clear" };
+      return { src: "/icons/sun.png", alt: "Clear" };
     case "Snow":
-      return { path: "/icons/snowy.png", alt: "Snowy" };
+      return { src: "/icons/snowy.png", alt: "Snowy" };
     case "Rain, Partially cloudy":
     case "Rain":
-      return { path: "/icons/rainy-day.png", alt: "Rainy" };
+      return { src: "/icons/rainy-day.png", alt: "Rainy" };
     default:
-      return { path: "/icons/sun.png", alt: "Clear" };
+      return { src: "/icons/sun.png", alt: "Clear" };
   }
 }
 
-function iconSwitch(weather) {
+function backgroundSwitch(weather) {
   switch (weather.conditions) {
     case "Overcast":
       return (bodyElement.style.background =
