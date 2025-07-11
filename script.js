@@ -239,16 +239,16 @@ function getWeatherIcon(conditions) {
   switch (conditions) {
     case "Overcast":
     case "Partially cloudy":
-      return { src: "/icons/clouds.png", alt: "Cloudy" };
+      return { src: "icons/clouds.png", alt: "Cloudy" };
     case "Clear":
-      return { src: "/icons/sun.png", alt: "Clear" };
+      return { src: "icons/sun.png", alt: "Clear" };
     case "Snow":
-      return { src: "/icons/snowy.png", alt: "Snowy" };
+      return { src: "icons/snowy.png", alt: "Snowy" };
     case "Rain, Partially cloudy":
     case "Rain":
-      return { src: "/icons/rainy-day.png", alt: "Rainy" };
+      return { src: "icons/rainy-day.png", alt: "Rainy" };
     default:
-      return { src: "/icons/sun.png", alt: "Clear" };
+      return { src: "icons/sun.png", alt: "Clear" };
   }
 }
 
